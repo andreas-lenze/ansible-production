@@ -1,0 +1,14 @@
+---
+# https://www.youtube.com/watch?v=JJ-aoyydfVU
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: install avahi-utils
+#   Instead of "apt" or "dnf" we will use a generic "package" instruction:
+    package:
+      name:
+        - "avahi-utils"
+      state: latest
+      update_cache: yes
