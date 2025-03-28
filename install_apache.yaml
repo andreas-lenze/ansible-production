@@ -1,18 +1,17 @@
 ---
+# https://www.youtube.com/watch?v=JJ-aoyydfVU
 
 - hosts: all
   become: true
   tasks:
 
-  - name: update repository index
-    apt:
+  - name: install apache and php packages
+#   Instead of "apt" or "dnf" we will use a generic "package" instruction:
+    package:
+      name:
+#       These are 2 arbitrarily defined variables
+#       which pull values from the inventory file:      
+        - "{{ apache_package }}"
+        - "{{ php_package }}"
+      state: latest
       update_cache: yes
-
-  - name: install apache2 package
-    apt:
-      name: apache2
-      state: latest
-  - name: add php support for apache2
-    apt:
-      name: libapache2-mod-php
-      state: latest

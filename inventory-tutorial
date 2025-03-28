@@ -1,0 +1,21 @@
+# 192.168.0.41 apache_package=apache2 php_package=libapache2-mod-php
+# 192.168.0.42 apache_package=apache2 php_package=libapache2-mod-php
+# 192.168.0.43 apache_package=apache2 php_package=libapache2-mod-php
+# This our CentOS server:
+# 192.168.0.44 apache_package=httpd php_package=php
+
+# Back to IPs only for lesson 09
+
+[web_servers]
+192.168.0.41
+192.168.0.44
+
+[db_servers]
+192.168.0.42
+
+[file_servers]
+192.168.0.43
+
+
+
+
